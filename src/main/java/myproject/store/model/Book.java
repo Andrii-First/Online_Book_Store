@@ -12,7 +12,6 @@ import lombok.NonNull;
 
 @Entity
 @Data
-@NoArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +20,6 @@ public class Book {
     private String title;
     @Column(nullable = false)
     private String author;
-    @NonNull
     @Column(nullable = false, unique = true)
     private String isbn;
     @Column(nullable = false)
