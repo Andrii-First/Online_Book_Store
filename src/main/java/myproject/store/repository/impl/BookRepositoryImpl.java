@@ -1,5 +1,6 @@
 package myproject.store.repository.impl;
 
+import java.util.List;
 import myproject.store.model.Book;
 import myproject.store.repository.BookRepository;
 import org.hibernate.Session;
@@ -7,8 +8,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public class BookRepositoryImpl implements BookRepository {
@@ -44,7 +43,7 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public List findAll() {
-        try (Session session = sessionFactory.openSession()){
+        try (Session session = sessionFactory.openSession()) {
             return session.createQuery("SELECT b FROM Book b", Book.class).getResultList();
         } catch (Exception e) {
             throw new RuntimeException("Can't get all Book's from DB", e);

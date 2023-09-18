@@ -1,11 +1,10 @@
 package myproject.store.service.impl;
 
+import java.util.List;
 import myproject.store.model.Book;
 import myproject.store.repository.BookRepository;
 import myproject.store.service.BookService;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
